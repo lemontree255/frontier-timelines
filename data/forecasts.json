@@ -1,0 +1,1705 @@
+{
+  "retrieved": "2026-11-11",
+  "source": "https://frontiertimelines.substack.com/",
+  "categories": [
+    {
+      "id": "agi",
+      "label": "AGI",
+      "name": "Artificial general intelligence",
+      "group": "intelligence",
+      "definition": "Reliable performance across most economically valuable remote cognitive work, including unfamiliar, sustained tasks."
+    },
+    {
+      "id": "research",
+      "label": "AI R&D automation",
+      "name": "Human Assisted Strong AI R&D automation",
+      "group": "intelligence",
+      "definition": "AI performs a large share of frontier research and engineering inside human-led laboratories."
+    },
+    {
+      "id": "rsi",
+      "label": "Autonomous RSI",
+      "name": "Fully Autonomous RSI",
+      "group": "intelligence",
+      "definition": "An autonomous successor-improvement loop with minimal human intellectual bottlenecks."
+    },
+    {
+      "id": "asi",
+      "label": "ASI",
+      "name": "Artificial superintelligence",
+      "group": "intelligence",
+      "definition": "Broad superiority over the best humans across cognitive and scientific activities."
+    },
+    {
+      "id": "robots",
+      "label": "Home robots",
+      "name": "Multipurpose home robots",
+      "group": "everyday",
+      "definition": "First useful commercial autonomous bundles of household chores across varied homes; not universal affordability."
+    },
+    {
+      "id": "lev",
+      "label": "Longevity / LEV",
+      "name": "Longevity escape velocity",
+      "group": "everyday",
+      "definition": "Medical progress adds at least one year of remaining life expectancy per calendar year for a meaningful treated population."
+    },
+    {
+      "id": "neural",
+      "label": "Neural FDVR",
+      "name": "Neural full-dive virtual reality (formerly FDVR)",
+      "group": "everyday",
+      "definition": "Coherent multisensory virtual experience primarily through direct neural stimulation. Continues the original FDVR history."
+    },
+    {
+      "id": "hybrid",
+      "label": "Hybrid FDVR",
+      "name": "Hybrid full-dive virtual reality",
+      "group": "everyday",
+      "definition": "Integrated conventional sensory output, natural control and coordinated physical feedback. Tracked separately from 29 September."
+    },
+    {
+      "id": "policy",
+      "label": "Post-labour policy",
+      "name": "UBI / Post-Labor Policy",
+      "group": "everyday",
+      "definition": "An operating national-scale or comparably broad structural income response to persistent AI displacement. The definition broadens during the series."
+    },
+    {
+      "id": "fusion",
+      "label": "Fusion",
+      "name": "Commercial fusion",
+      "group": "physical",
+      "definition": "Operating commercial fusion electricity, rather than a research milestone or announced project."
+    },
+    {
+      "id": "superconductors",
+      "label": "Superconductors",
+      "name": "Standard Condition Superconductors",
+      "group": "physical",
+      "definition": "Independently replicated superconductivity at approximately 293 K or above and one bar, with reproducible preparation."
+    },
+    {
+      "id": "abundance",
+      "label": "Post-scarcity",
+      "name": "General Post-Scarcity",
+      "group": "physical",
+      "definition": "Delivered energy, productive equipment, housing, logistics and broad access, rather than intelligence alone."
+    },
+    {
+      "id": "asteroids",
+      "label": "Asteroid abundance",
+      "name": "True Post-Scarcity with Asteroid Mining",
+      "group": "physical",
+      "definition": "Economically consequential extraterrestrial extraction feeding an expanding off-world industry."
+    },
+    {
+      "id": "legacy-rsi",
+      "label": "Original RSI",
+      "name": "Original undifferentiated RSI estimate",
+      "group": "intelligence",
+      "definition": "The original 20 June RSI estimate. Kept separate because the author subsequently split RSI into weak, strong and fully autonomous milestones."
+    },
+    {
+      "id": "weak",
+      "label": "Weak RSI",
+      "name": "Human Assisted Weak RSI",
+      "group": "intelligence",
+      "definition": "AI helping build better AI. Qualitative status only: Now, later Achieved. Never converted into an arrival year."
+    }
+  ],
+  "reports": [
+    {
+      "date": "2026-06-20",
+      "published": "2026-07-08T04:15:18.368Z",
+      "title": "Weekly AI Estimated Timeline For RSI, AGI, ASI, LEV and Home Multipurpose Robots",
+      "model": "ChatGPT 5.5",
+      "url": "https://frontiertimelines.substack.com/p/weekly-ai-estimated-timeline-for",
+      "tableUrl": null,
+      "imageUrl": null,
+      "notes": [
+        "Original RSI is 2031 (2028–2038). Later comparison columns retrospectively call the first full RSI estimate 2032; that is not substituted here."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2029 (2027–2035)"
+        },
+        "legacy-rsi": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2038,
+          "raw": "2031 (2028–2038)"
+        },
+        "asi": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2045,
+          "raw": "2034 (2029–2045)"
+        },
+        "robots": {
+          "central": 2033,
+          "low": 2029,
+          "high": 2040,
+          "raw": "2033 (2029–2040)"
+        },
+        "lev": {
+          "central": 2045,
+          "low": 2035,
+          "high": 2065,
+          "raw": "2045 (2035–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-06-30",
+      "published": "2026-07-08T04:22:50.001Z",
+      "title": "AI Estimated Timeline For RSI, AGI, ASI, LEV and Home Multipurpose Robots",
+      "model": "ChatGPT 5.5",
+      "url": "https://frontiertimelines.substack.com/p/ai-estimated-timeline-for-rsi-agi",
+      "tableUrl": null,
+      "imageUrl": "https://substackcdn.com/image/fetch/$s_!9Ptw!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F57ec99d9-c50e-44e7-86b1-a08598a0298f_594x322.png",
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2033,
+          "raw": "2028 (2027–2033)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2031,
+          "raw": "2028 (2027–2031)"
+        },
+        "asi": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2042,
+          "raw": "2032 (2028–2042)"
+        },
+        "robots": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2031 (2028–2040)"
+        },
+        "lev": {
+          "central": 2045,
+          "low": 2035,
+          "high": 2065,
+          "raw": "2045 (2035–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-07-07",
+      "published": "2026-07-08T04:31:05.920Z",
+      "title": "AI Estimated Timeline For RSI, AGI, ASI, LEV, FDVR, and Home Multipurpose Robots",
+      "model": "ChatGPT 5.5",
+      "url": "https://frontiertimelines.substack.com/p/ai-estimated-timeline-for-rsi-agi-84f",
+      "tableUrl": null,
+      "imageUrl": "https://substackcdn.com/image/fetch/$s_!shKK!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F076d2f66-bbe7-4f61-8965-a88bf95b2e22_813x345.png",
+      "notes": [
+        "The next report’s retrospective GPT-5.5 comparison differs on several values. These points retain the 7 July post’s own current estimates."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2033,
+          "raw": "2028 (2027–2033)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2031,
+          "raw": "2028 (2027–2031)"
+        },
+        "asi": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2042,
+          "raw": "2032 (2028–2042)"
+        },
+        "robots": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2037,
+          "raw": "2030 (2027–2037)"
+        },
+        "lev": {
+          "central": 2045,
+          "low": 2035,
+          "high": 2065,
+          "raw": "2045 (2035–2065)"
+        },
+        "neural": {
+          "central": 2040,
+          "low": 2032,
+          "high": 2060,
+          "raw": "2040 (2032–2060)"
+        }
+      }
+    },
+    {
+      "date": "2026-07-14",
+      "published": "2026-07-15T00:40:14.999Z",
+      "title": "Weekly AI Estimated Timeline For RSI, AGI, ASI, LEV, UBI and Home Multipurpose Robots",
+      "model": "ChatGPT 5.6",
+      "url": "https://frontiertimelines.substack.com/p/weekly-ai-estimated-timeline-for-84b",
+      "tableUrl": null,
+      "imageUrl": "https://substackcdn.com/image/fetch/$s_!RW-T!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe2cf11e6-3920-453c-815a-15df3ced46f6_789x436.png",
+      "notes": [
+        "Model changes from GPT-5.5 to GPT-5.6. Full RSI is first separately estimated. UBI is first explicitly tracked in a current forecast."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2033,
+          "raw": "2029 (2027–2033)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2031,
+          "raw": "2028 (2027–2031)"
+        },
+        "rsi": {
+          "central": 2032,
+          "low": 2029,
+          "high": 2038,
+          "raw": "2032 (2029–2038)"
+        },
+        "asi": {
+          "central": 2033,
+          "low": 2029,
+          "high": 2042,
+          "raw": "2033 (2029–2042)"
+        },
+        "robots": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2038,
+          "raw": "2031 (2028–2038)"
+        },
+        "lev": {
+          "central": 2045,
+          "low": 2035,
+          "high": 2065,
+          "raw": "2045 (2035–2065)"
+        },
+        "neural": {
+          "central": 2041,
+          "low": 2033,
+          "high": 2062,
+          "raw": "2041 (2033–2062)"
+        },
+        "policy": {
+          "central": 2033,
+          "low": 2029,
+          "high": 2042,
+          "raw": "2033 (2029–2042)"
+        }
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "published": "2026-07-22T01:07:06.302Z",
+      "title": "Weekly AI Timeline Estimates For RSI, AGI, ASI, LEV, UBI and Home Multipurpose Robots",
+      "model": "ChatGPT 5.6 Sol",
+      "url": "https://frontiertimelines.substack.com/p/weekly-ai-timeline-estimates-for",
+      "tableUrl": null,
+      "imageUrl": "https://substackcdn.com/image/fetch/$s_!eAQG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F08632859-ab43-4497-a914-39a612934c7e_737x544.png",
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2033,
+          "raw": "2029 (2027–2033)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2031,
+          "raw": "2028 (2027–2031)"
+        },
+        "rsi": {
+          "central": 2032,
+          "low": 2029,
+          "high": 2038,
+          "raw": "2032 (2029–2038)"
+        },
+        "asi": {
+          "central": 2033,
+          "low": 2029,
+          "high": 2042,
+          "raw": "2033 (2029–2042)"
+        },
+        "robots": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2037,
+          "raw": "2030 (2027–2037)"
+        },
+        "lev": {
+          "central": 2045,
+          "low": 2035,
+          "high": 2065,
+          "raw": "2045 (2035–2065)"
+        },
+        "neural": {
+          "central": 2041,
+          "low": 2033,
+          "high": 2062,
+          "raw": "2041 (2033–2062)"
+        },
+        "policy": {
+          "central": 2033,
+          "low": 2029,
+          "high": 2042,
+          "raw": "2033 (2029–2042)"
+        }
+      }
+    },
+    {
+      "date": "2026-07-28",
+      "published": "2026-07-29T03:59:13.706Z",
+      "title": "Weekly AI Timeline Estimates For RSI, AGI, ASI, LEV, UBI and Home Multipurpose Robots",
+      "model": "ChatGPT 5.6 Sol",
+      "url": "https://frontiertimelines.substack.com/p/weekly-ai-timeline-estimates-for-167",
+      "tableUrl": null,
+      "imageUrl": "https://substackcdn.com/image/fetch/$s_!Uy4T!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F970dae39-1b1c-478d-bc04-1ae4679a529b_796x645.png",
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2029 (2027–2032)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "rsi": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2037,
+          "raw": "2031 (2028–2037)"
+        },
+        "asi": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "robots": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2037,
+          "raw": "2030 (2027–2037)"
+        },
+        "lev": {
+          "central": 2045,
+          "low": 2035,
+          "high": 2065,
+          "raw": "2045 (2035–2065)"
+        },
+        "neural": {
+          "central": 2041,
+          "low": 2033,
+          "high": 2062,
+          "raw": "2041 (2033–2062)"
+        },
+        "policy": {
+          "central": 2033,
+          "low": 2029,
+          "high": 2042,
+          "raw": "2033 (2029–2042)"
+        }
+      }
+    },
+    {
+      "date": "2026-08-04",
+      "published": "2026-08-04T21:09:49.989Z",
+      "title": "Weekly AI Timeline Estimates for RSI, AGI, ASI, LEV, UBI/Post-Labor Policy, and Multipurpose Home Robots",
+      "model": "ChatGPT 5.6 So",
+      "url": "https://frontiertimelines.substack.com/p/weekly-ai-timeline-estimates-for-af5",
+      "tableUrl": "https://datawrapper.dwcdn.net/ihDtR/2/dataset.csv",
+      "imageUrl": null,
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2031,
+          "raw": "2028 (2027–2031)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2029,
+          "raw": "2026 (2026–2029)"
+        },
+        "rsi": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2036,
+          "raw": "2030 (2027–2036)"
+        },
+        "asi": {
+          "central": 2031,
+          "low": 2027,
+          "high": 2039,
+          "raw": "2031 (2027–2039)"
+        },
+        "robots": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2036,
+          "raw": "2030 (2027–2036)"
+        },
+        "lev": {
+          "central": 2045,
+          "low": 2035,
+          "high": 2065,
+          "raw": "2045 (2035–2065)"
+        },
+        "neural": {
+          "central": 2041,
+          "low": 2033,
+          "high": 2062,
+          "raw": "2041 (2033–2062)"
+        },
+        "policy": {
+          "central": 2033,
+          "low": 2029,
+          "high": 2042,
+          "raw": "2033 (2029–2042)"
+        }
+      }
+    },
+    {
+      "date": "2026-08-11",
+      "published": "2026-08-11T22:35:55.066Z",
+      "title": "Weekly AI Timeline Estimates for RSI, AGI, ASI, LEV, UBI/Post-Labor Policy, and Multipurpose Home Robots",
+      "model": "ChatGPT 5.6 Sol",
+      "url": "https://frontiertimelines.substack.com/p/weekly-ai-timeline-estimates-for-f43",
+      "tableUrl": "https://datawrapper.dwcdn.net/c93ni/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2030,
+          "raw": "2028 (2027–2030)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "rsi": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2030 (2027–2035)"
+        },
+        "asi": {
+          "central": 2031,
+          "low": 2027,
+          "high": 2038,
+          "raw": "2031 (2027–2038)"
+        },
+        "robots": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2036,
+          "raw": "2030 (2027–2036)"
+        },
+        "lev": {
+          "central": 2040,
+          "low": 2033,
+          "high": 2060,
+          "raw": "2040 (2033–2060)"
+        },
+        "neural": {
+          "central": 2041,
+          "low": 2033,
+          "high": 2062,
+          "raw": "2041 (2033–2062)"
+        },
+        "policy": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        }
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "published": "2026-08-18T21:37:17.871Z",
+      "title": "Weekly AI Timeline Estimates for RSI, AGI, ASI, LEV, UBI/Post-Labor Policy, Multipurpose Home Robots, and Post Scarcity",
+      "model": "ChatGPT 5.6 Sol",
+      "url": "https://frontiertimelines.substack.com/p/weekly-ai-timeline-estimates-for-761",
+      "tableUrl": "https://datawrapper.dwcdn.net/G8OgH/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [
+        "General and asteroid-enabled post-scarcity are first tracked."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2030,
+          "raw": "2028 (2027–2030)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "rsi": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2030 (2027–2035)"
+        },
+        "asi": {
+          "central": 2031,
+          "low": 2027,
+          "high": 2038,
+          "raw": "2031 (2027–2038)"
+        },
+        "robots": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "lev": {
+          "central": 2035,
+          "low": 2029,
+          "high": 2048,
+          "raw": "2035 (2029–2048)"
+        },
+        "neural": {
+          "central": 2036,
+          "low": 2029,
+          "high": 2050,
+          "raw": "2036 (2029–2050)"
+        },
+        "policy": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2036,
+          "raw": "2031 (2028–2036)"
+        },
+        "abundance": {
+          "central": 2038,
+          "low": 2032,
+          "high": 2052,
+          "raw": "2038 (2032–2052)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2036,
+          "high": 2065,
+          "raw": "2047 (2036–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "published": "2026-08-26T03:59:05.687Z",
+      "title": "Weekly AI Timeline Estimates for RSI, AGI, ASI, LEV, UBI/Post-Labor Policy, Multipurpose Home Robots, and Post Scarcity",
+      "model": "ChatGPT 5.6 Sol",
+      "url": "https://frontiertimelines.substack.com/p/weekly-ai-timeline-estimates-for-830",
+      "tableUrl": "https://datawrapper.dwcdn.net/nfvnc/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2030,
+          "raw": "2028 (2027–2030)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2033,
+          "raw": "2029 (2027–2033)"
+        },
+        "asi": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "robots": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2033,
+          "raw": "2029 (2027–2033)"
+        },
+        "lev": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "neural": {
+          "central": 2035,
+          "low": 2028,
+          "high": 2048,
+          "raw": "2035 (2028–2048)"
+        },
+        "policy": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2035,
+          "raw": "2031 (2028–2035)"
+        },
+        "abundance": {
+          "central": 2037,
+          "low": 2031,
+          "high": 2050,
+          "raw": "2037 (2031–2050)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2035,
+          "high": 2065,
+          "raw": "2047 (2035–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "published": "2026-09-01T21:33:33.401Z",
+      "title": "Weekly AI Timeline Estimates for RSI, AGI, ASI, LEV, UBI/Post-Labor Policy, Multipurpose Home Robots, and Post Scarcity, and Fusion",
+      "model": "ChatGPT Sol 5.6",
+      "url": "https://frontiertimelines.substack.com/p/weekly-ai-timeline-estimates-for-2e4",
+      "tableUrl": "https://datawrapper.dwcdn.net/qliiV/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [
+        "RSI labels clarified without changing the underlying milestones. Fusion is first tracked."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2030,
+          "raw": "2028 (2027–2030)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2031,
+          "raw": "2028 (2027–2031)"
+        },
+        "asi": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2029 (2027–2032)"
+        },
+        "robots": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2029 (2027–2034)"
+        },
+        "lev": {
+          "central": 2033,
+          "low": 2028,
+          "high": 2045,
+          "raw": "2033 (2028–2045)"
+        },
+        "neural": {
+          "central": 2034,
+          "low": 2028,
+          "high": 2046,
+          "raw": "2034 (2028–2046)"
+        },
+        "policy": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2035,
+          "raw": "2031 (2028–2035)"
+        },
+        "fusion": {
+          "central": 2033,
+          "low": 2028,
+          "high": 2042,
+          "raw": "2033 (2028–2042)"
+        },
+        "abundance": {
+          "central": 2036,
+          "low": 2030,
+          "high": 2049,
+          "raw": "2036 (2030–2049)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2034,
+          "high": 2065,
+          "raw": "2047 (2034–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "published": "2026-09-08T23:07:28.597Z",
+      "title": "Week #12: AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multi-purpose Home Robots, Post Scarcity, and Fusion",
+      "model": "ChatGPT 5.6 Sol",
+      "url": "https://frontiertimelines.substack.com/p/week-12-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/0WM3J/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2029,
+          "raw": "2027 (2026–2029)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2042,
+          "raw": "2032 (2027–2042)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "published": "2026-09-15T22:19:51.990Z",
+      "title": "Week #13: AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, and Fusion",
+      "model": "ChatGPT 5.6 Sol",
+      "url": "https://frontiertimelines.substack.com/p/week-13-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/62wTk/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2029,
+          "raw": "2027 (2026–2029)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "published": "2026-09-23T19:49:43.059Z",
+      "title": "Week #14: AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, and Fusion",
+      "model": "ChatGPT 6 Pro (Chat)",
+      "url": "https://frontiertimelines.substack.com/p/week-14-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/ivzMC/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [
+        "Model changes to ChatGPT 6 Pro (Chat)."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2029,
+          "raw": "2027 (2026–2029)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "published": "2026-09-30T01:54:57.982Z",
+      "title": "Week #15: AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, and Fusion",
+      "model": "ChatGPT 6 Pro (Chat)",
+      "url": "https://frontiertimelines.substack.com/p/week-15-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/aMb9M/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [
+        "Hybrid FDVR introduced. Original FDVR history continues as Neural FDVR. RSI and ASI upper bounds widen by one year."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2031,
+          "raw": "2027 (2026–2031)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "hybrid": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2029 (2027–2035)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "published": "2026-10-07T04:13:34.840Z",
+      "title": "Week #16: AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, and Fusion",
+      "model": "ChatGPT 6 Pro (Chat)",
+      "url": "https://frontiertimelines.substack.com/p/week-16-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/luoLz/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2031,
+          "raw": "2027 (2026–2031)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "hybrid": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2029 (2027–2035)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "published": "2026-10-14T04:34:23.521Z",
+      "title": "Week #17: AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, and Fusion",
+      "model": "ChatGPT 6 Pro (Chat)",
+      "url": "https://frontiertimelines.substack.com/p/week-17-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/a5Kni/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2031,
+          "raw": "2027 (2026–2031)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "hybrid": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2029 (2027–2035)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-10-20",
+      "published": "2026-10-21T04:22:54.133Z",
+      "title": "Week #18: AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, and Fusion",
+      "model": "ChatGPT 6 Pro (Chat)",
+      "url": "https://frontiertimelines.substack.com/p/week-18-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/UPGEV/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Now",
+          "raw": "Now"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2031,
+          "raw": "2027 (2026–2031)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "hybrid": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2029 (2027–2035)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-10-27",
+      "published": "2026-10-27T18:06:14.392Z",
+      "title": "Week #19 AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, Fusion, and Standard Condition Superconductors.",
+      "model": "ChatGPT 6 Pro (Chat)",
+      "url": "https://frontiertimelines.substack.com/p/week-19-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/FlJpK/2/dataset.csv",
+      "imageUrl": null,
+      "notes": [
+        "Standard Condition Superconductors introduced. Weak RSI changes from Now to Achieved; this is a qualitative label, not a dated arrival."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Achieved",
+          "raw": "Achieved"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2031,
+          "raw": "2027 (2026–2031)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "hybrid": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2029 (2027–2035)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "superconductors": {
+          "central": 2033,
+          "low": 2028,
+          "high": 2050,
+          "raw": "2033 (2028–2050)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "published": "2026-11-03T23:30:01.085Z",
+      "title": "Week #20 AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, Fusion, and Standard Condition Superconductors.",
+      "model": "ChatGPT 6 Pro (Chat)",
+      "url": "https://frontiertimelines.substack.com/p/week-20-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/3u12d/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Achieved",
+          "raw": "Achieved"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2030,
+          "raw": "2027 (2026–2030)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2031,
+          "raw": "2027 (2026–2031)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "hybrid": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2029 (2027–2035)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "superconductors": {
+          "central": 2033,
+          "low": 2028,
+          "high": 2050,
+          "raw": "2033 (2028–2050)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-11-10",
+      "published": "2026-11-10T23:58:59.549Z",
+      "title": "Week #21 AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, Fusion, and Standard Condition Superconductors.",
+      "model": "ChatGPT 6 Pro (Chat)",
+      "url": "https://frontiertimelines.substack.com/p/week-21-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/NLiAJ/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [
+        "Autonomous RSI upper bound narrows from 2030 to 2029; central estimate remains 2027."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Achieved",
+          "raw": "Achieved"
+        },
+        "research": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2027,
+          "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2029,
+          "raw": "2027 (2026–2029)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2031,
+          "raw": "2027 (2026–2031)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "hybrid": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2029 (2027–2035)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "superconductors": {
+          "central": 2033,
+          "low": 2028,
+          "high": 2050,
+          "raw": "2033 (2028–2050)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    }
+  ]
+}

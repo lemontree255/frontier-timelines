@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="Explore how Frontier Timelines' AI, robotics, longevity and technology forecasts have changed, from June to November 2026.">
+  <title>The future keeps moving · Frontier Timeline Observatory</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23126b60'/%3E%3Cpath d='M12 45L26 22L39 32L53 12' fill='none' stroke='%23ffffff' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="vendor/d3.min.js" defer></script>
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">↗</span> FRONTIER <span>OBSERVATORY</span></a>
+      <nav aria-label="External links"><a href="https://frontiertimelines.substack.com/" target="_blank" rel="noopener">Read the source ↗</a><a href="https://github.com/lemontree255/frontier-timelines">GitHub ↗</a></nav>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div><div class="eyebrow"><span class="live-dot"></span> A RECORD OF CHANGING EXPECTATIONS</div>
+          <h1 id="page-title">The future<br>keeps <em>moving.</em></h1>
+          <p>When will the breakthroughs arrive? Explore how <a href="https://frontiertimelines.substack.com/">Frontier Timelines</a> has revised its forecasts, one update at a time.</p>
+        </div>
+        <div class="intro-meta"><span class="edition">THE FORECAST ARCHIVE / 2026</span><div><strong id="report-count">21</strong><span>dated updates</span></div><p id="coverage">20 June — 10 November 2026</p><span class="disclaimer">One publication’s AI-generated scenario estimates.<br>These are forecasts, not verified achievements.</span></div>
+      </section>
+
+      <div id="error" role="alert" hidden></div>
+      <div id="loading" role="status">Loading the forecast archive…</div>
+      <div id="app" hidden>
+        <section class="chart-panel" aria-labelledby="chart-title">
+          <div class="panel-top"><div><div class="eyebrow">01 / THE CHANGING HORIZON</div><h2 id="chart-title">Where the timelines are heading</h2></div><div class="mode-switch" role="group" aria-label="Vertical axis"><button type="button" data-mode="year" aria-pressed="true">Arrival year</button><button type="button" data-mode="change" aria-pressed="false">Years moved</button></div></div>
+          <div class="chart-toolbar"><div class="group-switch" role="group" aria-label="Timeline groups"><button type="button" data-group="all" aria-pressed="true">All timelines</button><button type="button" data-group="intelligence" aria-pressed="false">Intelligence</button><button type="button" data-group="everyday" aria-pressed="false">Life & society</button><button type="button" data-group="physical" aria-pressed="false">Physical world</button></div><label class="range-toggle"><input id="show-range" type="checkbox"> Show focused range</label></div>
+          <div class="chart-layout"><div class="plot-wrap"><svg id="chart" role="img" aria-labelledby="svg-title svg-desc"><title id="svg-title">Evolution of forecast arrival years</title><desc id="svg-desc">Dates of estimates on the horizontal axis; predicted arrival years on the vertical axis. Use the date slider and the table below for the exact values.</desc></svg><div id="tooltip" class="chart-tooltip" hidden></div></div>
+            <aside class="inspector" aria-labelledby="focus-title"><span class="eyebrow">IN FOCUS</span><label class="sr-only" for="focus">Inspect a timeline</label><select id="focus"></select><h3 id="focus-title" class="sr-only">Selected timeline</h3><div class="focus-value" id="focus-value">—</div><p class="focus-range" id="focus-range"></p><div id="focus-change" class="focus-change"></div><p id="focus-definition"></p><p id="focus-first" class="small"></p><a id="focus-source" target="_blank" rel="noopener">Read this update ↗</a></aside>
+          </div>
+          <div class="plot-caption"><span id="axis-help">Lower lines mean earlier predicted arrival.</span><span>Hover to explore · tap to select · use the slider to navigate</span></div>
+          <div id="legend" class="legend" role="group" aria-label="Show or hide individual timelines"></div>
+        </section>
+
+        <section class="snapshot" aria-labelledby="snapshot-title">
+          <div class="snapshot-top"><div><div class="eyebrow">02 / A MOMENT IN THE ARCHIVE</div><h2 id="snapshot-title">The forecast on <span id="selected-date"></span></h2></div><a id="report-link" class="text-link" target="_blank" rel="noopener">Original update ↗</a></div>
+          <div class="date-controls"><button id="previous" type="button" aria-label="Previous update">←</button><label class="sr-only" for="date-slider">Forecast update</label><input id="date-slider" type="range" min="0" max="20" value="20"><button id="next" type="button" aria-label="Next update">→</button></div>
+          <div class="date-labels"><span id="first-date"></span><span id="model"></span><span id="last-date"></span></div>
+          <p id="report-notes" class="report-notes" hidden></p>
+          <div class="table-wrap"><table><caption class="sr-only">Estimates in the selected update, compared with each category’s first directly recorded estimate. Select a timeline to focus its chart.</caption><thead><tr><th scope="col">Timeline</th><th scope="col">First recorded</th><th scope="col">This update</th><th scope="col">Plausible range</th><th scope="col">Shift</th></tr></thead><tbody id="snapshot-rows"></tbody></table></div>
+          <div class="snapshot-foot"><span id="status-line"></span><button id="download" type="button" class="download">Download all data ↓</button></div>
+          <div class="sr-only" id="selection-status" role="status" aria-live="polite"></div>
+        </section>
+
+        <section class="methodology" aria-labelledby="method-title"><div class="eyebrow">03 / HOW TO READ THIS</div><h2 id="method-title">A little context matters.</h2><div class="method-grid"><div><h3>Dates, not countdowns</h3><p>The horizontal axis is the date of the forecast session, which sometimes precedes publication. The vertical axis is the predicted calendar year. “Years moved” measures change from each category’s own first recorded estimate.</p></div><div><h3>Ranges are scenarios</h3><p>The optional shaded band is the focused timeline’s published plausible range. These are qualitative planning ranges, not statistical confidence intervals. Steps show revisions at dated updates; gaps mean no estimate was recorded.</p></div><div><h3>Keep the definitions honest</h3><p>Original RSI is separate from the later three-part RSI framework. The original FDVR history continues as Neural FDVR; Hybrid FDVR starts on 29 September. New categories begin when first explicitly tracked.</p></div></div>
+          <details><summary>Source notes & historical inconsistencies</summary><p>Values come from each post’s <strong>current</strong> forecast table, including the early image tables and the later embedded Datawrapper datasets. A later “first week” or “previous week” column does not overwrite an earlier post’s own values. The 20 June undifferentiated RSI estimate is 2031, while later comparison tables refer to 2032 for full RSI. The 14 July retrospective comparison also differs from the 7 July current estimates. Both are preserved as originally stated.</p><p>The original RSI observation is available in the legend, but is hidden by default because it is not directly comparable to autonomous RSI. UBI is first explicitly tracked on 14 July; abundance categories on 18 August; fusion on 1 September; Hybrid FDVR on 29 September; superconductors on 27 October. Qualitative “Now” and “Achieved” labels for weak RSI are kept out of the numeric chart.</p><p>Forecasts depend on one another and on the models and prompts used by the publication. A revision can reflect changed interpretation or model choice as well as new evidence. This independent visualisation does not endorse the forecasts or fact-check the underlying news. Archived here as retrieved on <span id="retrieved"></span>; updates are manual.</p><p><a href="data/forecasts.json">View the sourced dataset</a> · <a id="table-source" target="_blank" rel="noopener">Selected source table ↗</a></p></details>
+        </section>
+      </div>
+    </main>
+    <footer><span>FRONTIER OBSERVATORY <span class="footer-dot">/</span> An independent view of an evolving future.</span><span>Source: <a href="https://frontiertimelines.substack.com/">Frontier Timelines</a> · <a href="https://github.com/lemontree255/frontier-timelines">Source code</a></span></footer>
+  </div>
+  <noscript><p>This interactive chart requires JavaScript. The full sourced dataset is available as <a href="data/forecasts.json">JSON</a>.</p></noscript>
+</body>
+</html>
