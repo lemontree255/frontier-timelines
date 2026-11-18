@@ -6,7 +6,7 @@
 - `python3 -m unittest discover -s tests`: 3 passing importer checks covering moved current-estimate columns, qualitative statuses, unknown/incomplete/invalid source data, unchanged history and idempotence.
 - `node --test model.test.mjs`: 4 passing checks, including the transition from a numeric forecast to the source's “Achieved” classification.
 - Re-running the importer against the live source added zero updates.
-- Executed the workflow's actual lightweight probe with unchanged and new-forecast responses: exactly two HTTP requests in each case, with the correct skip/update decision. Unchanged scheduled runs skip checkout, parsing, tests, commits and Pages publication.
+- Executed the workflow's actual lightweight probe with unchanged and new-forecast responses: exactly two HTTP requests in each case, with the correct skip/update decision. Unchanged scheduled runs skip checkout, table parsing, tests, commits and Pages publication.
 - Headless Chromium: latest session, achieved inspector/table state, previous numeric history, both axes, range checkbox, CSV export, no page errors, and no document overflow at 390px or 320px. Updated desktop/mobile screenshots were visually inspected.
 - Workflow runs only for this public repository, on a standard `ubuntu-latest` runner, with a five-minute limit and no artifact/cache upload steps. No AI services or custom credentials are used.
 

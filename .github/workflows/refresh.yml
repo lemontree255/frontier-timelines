@@ -25,7 +25,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import json, os, re
-          from urllib.request import urlopen
+          from urllib.request import Request, urlopen
           from xml.etree import ElementTree
           from pathlib import Path
           needed = True
@@ -33,7 +33,8 @@ jobs:
               repo = os.environ['GITHUB_REPOSITORY']
               with urlopen(f'https://raw.githubusercontent.com/{repo}/main/data/forecasts.json', timeout=20) as response:
                   known = {report['url'] for report in json.load(response)['reports']}
-              with urlopen('https://frontiertimelines.substack.com/feed', timeout=20) as response:
+              request = Request('https://frontiertimelines.substack.com/feed', headers={'User-Agent': 'Mozilla/5.0 (compatible; FrontierTimelineObservatory/1.0; +https://github.com/lemontree255/frontier-timelines)'})
+              with urlopen(request, timeout=20) as response:
                   items = ElementTree.parse(response).findall('./channel/item')
               if not items:
                   raise ValueError('Empty RSS response')

@@ -37,10 +37,14 @@ def fetch(url):
         'frontiertimelines.substack.com', 'datawrapper.dwcdn.net'
     ):
         raise ValueError(f'Unexpected source URL: {url}')
-    return subprocess.check_output([
-        'curl', '--fail', '--silent', '--show-error', '--location',
+    result = subprocess.run([
+        'curl', '--fail-with-body', '--silent', '--show-error', '--location',
+        '--user-agent', 'Mozilla/5.0 (compatible; FrontierTimelineObservatory/1.0; +https://github.com/lemontree255/frontier-timelines)',
         '--max-time', '45', '--retry', '2', url,
-    ], text=True)
+    ], text=True, capture_output=True)
+    if result.returncode:
+        raise RuntimeError(f'Source request failed: {url}: {result.stderr.strip()} {result.stdout[:500]}')
+    return result.stdout
 
 
 class PostHTML(HTMLParser):
