@@ -6,15 +6,14 @@ import json
 import re
 import subprocess
 from datetime import date, datetime
-from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
-from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data/forecasts.json'
 SOURCE = 'https://frontiertimelines.substack.com'
+FEED = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ffrontiertimelines.substack.com%2Ffeed'
 ALIASES = {
     'AGI': 'agi', 'ASI': 'asi', 'Early RSI': 'weak',
     'Human Assisted Weak RSI': 'weak',
@@ -34,7 +33,7 @@ ALIASES = {
 def fetch(url):
     parsed = urlsplit(url)
     if parsed.scheme != 'https' or parsed.hostname not in (
-        'frontiertimelines.substack.com', 'datawrapper.dwcdn.net'
+        'frontiertimelines.substack.com', 'datawrapper.dwcdn.net', 'api.rss2json.com'
     ):
         raise ValueError(f'Unexpected source URL: {url}')
     result = subprocess.run([
@@ -59,6 +58,11 @@ class PostHTML(HTMLParser):
             self.skip += 1
         if tag == 'iframe':
             url = dict(attrs).get('src', '')
+            if re.fullmatch(r'https://datawrapper\.dwcdn\.net/[A-Za-z0-9]+/\d+/', url):
+                self.tables.append(url + 'dataset.csv')
+        attrs = dict(attrs)
+        if tag == 'div' and 'datawrapper-wrap' in attrs.get('class', '').split():
+            url = json.loads(attrs.get('data-attrs', '{}')).get('url', '')
             if re.fullmatch(r'https://datawrapper\.dwcdn\.net/[A-Za-z0-9]+/\d+/', url):
                 self.tables.append(url + 'dataset.csv')
 
@@ -143,25 +147,29 @@ def parse_report(post, markup, raw, table_url, previous, labels):
         notes.append('No changes to central estimates, ranges or tracked statuses.')
     return dict(date=forecast_date.isoformat(), published=post['post_date'],
                 title=post['title'], model=model, url=post['canonical_url'],
-                tableUrl=table_url, imageUrl=None, notes=notes, estimates=estimates)
+                tableUrl=table_url, imageUrl=None, notes=notes, estimates=estimates,
+                discoveryUrl=FEED)
 
 
 def refresh(data, download=fetch):
     known = {report['url'] for report in data['reports']}
     posts = []
-    items = ElementTree.fromstring(download(SOURCE + '/feed')).findall('./channel/item')
-    if not items:
-        raise ValueError('Missing or empty RSS feed')
+    feed = json.loads(download(FEED))
+    if feed.get('status') != 'ok' or feed.get('feed', {}).get('url') != SOURCE + '/feed':
+        raise ValueError('RSS relay failed or returned a different publication')
+    items = feed.get('items')
+    if not isinstance(items, list) or not items:
+        raise ValueError('Missing or empty RSS relay response')
     for item in items:
-        url = item.findtext('link')
+        url = item['link']
         if url in known:
             break
-        title = item.findtext('title', '')
+        title = item.get('title', '')
         if re.search(r'\btimeline\s+estimates?\b', title, re.I):
             posts.append(dict(canonical_url=url, title=title,
-                              post_date=parsedate_to_datetime(item.findtext('pubDate')).isoformat(),
-                              subtitle=item.findtext('description', ''),
-                              markup=item.findtext('{http://purl.org/rss/1.0/modules/content/}encoded', '')))
+                              post_date=item['pubDate'],
+                              subtitle=item.get('description', ''),
+                              markup=item.get('content', '')))
     else:
         raise ValueError('RSS feed no longer overlaps the existing history; review required')
     # Work on a copy so a malformed later post cannot partially update the archive.

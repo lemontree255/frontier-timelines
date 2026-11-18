@@ -1,14 +1,11 @@
 import copy
 import json
 from pathlib import Path
-from email.utils import format_datetime
-from datetime import datetime
-from xml.etree import ElementTree
 import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from refresh import parse_table, refresh, SOURCE
+from refresh import parse_table, refresh, SOURCE, FEED
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = json.loads((ROOT / 'data/forecasts.json').read_text())
@@ -37,20 +34,14 @@ class RefreshTests(unittest.TestCase):
                 parse_table(invalid, BASE['reports'][-1]['estimates'])
 
     def test_append_preserves_history_and_second_run_is_a_noop(self):
-        feed = ElementTree.Element('rss')
-        channel = ElementTree.SubElement(feed, 'channel')
-        item = ElementTree.SubElement(channel, 'item')
-        for tag, text in {
+        item = {
             'link':POST['url'], 'title':POST['title'],
-            'pubDate':format_datetime(datetime.fromisoformat(POST['published'])),
+            'pubDate':POST['published'],
             'description':'Model Used: ' + POST['model'],
-            '{http://purl.org/rss/1.0/modules/content/}encoded':'<p>Current date: November 17, 2026</p><iframe src="https://datawrapper.dwcdn.net/60l3e/1/"></iframe>',
-        }.items():
-            ElementTree.SubElement(item, tag).text = text
-        item = ElementTree.SubElement(channel, 'item')
-        ElementTree.SubElement(item, 'link').text = BASE['reports'][-1]['url']
+            'content': '<p>Current date: November 17, 2026</p><div class="datawrapper-wrap outer" data-attrs=\'{"url":"https://datawrapper.dwcdn.net/60l3e/1/"}\'></div>',
+        }
         urls = {
-            SOURCE + '/feed': ElementTree.tostring(feed, encoding='unicode'),
+            FEED: json.dumps({'status':'ok', 'feed':{'url':SOURCE+'/feed'}, 'items':[item, {'link':BASE['reports'][-1]['url']}]}),
             POST['tableUrl']: TABLE,
         }
         original = copy.deepcopy(BASE)
