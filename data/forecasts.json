@@ -1,5 +1,5 @@
 {
-  "retrieved": "2026-11-11",
+  "retrieved": "2026-11-18",
   "source": "https://frontiertimelines.substack.com/",
   "categories": [
     {
@@ -1632,6 +1632,100 @@
           "low": 2026,
           "high": 2027,
           "raw": "2026 (2026–2027)"
+        },
+        "rsi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2029,
+          "raw": "2027 (2026–2029)"
+        },
+        "asi": {
+          "central": 2027,
+          "low": 2026,
+          "high": 2031,
+          "raw": "2027 (2026–2031)"
+        },
+        "robots": {
+          "central": 2028,
+          "low": 2027,
+          "high": 2032,
+          "raw": "2028 (2027–2032)"
+        },
+        "lev": {
+          "central": 2031,
+          "low": 2028,
+          "high": 2041,
+          "raw": "2031 (2028–2041)"
+        },
+        "hybrid": {
+          "central": 2029,
+          "low": 2027,
+          "high": 2035,
+          "raw": "2029 (2027–2035)"
+        },
+        "neural": {
+          "central": 2032,
+          "low": 2027,
+          "high": 2040,
+          "raw": "2032 (2027–2040)"
+        },
+        "policy": {
+          "central": 2030,
+          "low": 2027,
+          "high": 2034,
+          "raw": "2030 (2027–2034)"
+        },
+        "fusion": {
+          "central": 2032,
+          "low": 2028,
+          "high": 2040,
+          "raw": "2032 (2028–2040)"
+        },
+        "superconductors": {
+          "central": 2033,
+          "low": 2028,
+          "high": 2050,
+          "raw": "2033 (2028–2050)"
+        },
+        "abundance": {
+          "central": 2034,
+          "low": 2029,
+          "high": 2046,
+          "raw": "2034 (2029–2046)"
+        },
+        "asteroids": {
+          "central": 2047,
+          "low": 2032,
+          "high": 2065,
+          "raw": "2047 (2032–2065)"
+        }
+      }
+    },
+    {
+      "date": "2026-11-17",
+      "published": "2026-11-18T03:54:33.966Z",
+      "title": "Week #22 AI Timeline Estimates for RSI, AGI, ASI, LEV, FDVR, UBI/Post-Labor Policy, Multipurpose Home Robots, Post Scarcity, Fusion, and Standard Condition Superconductors.",
+      "model": "ChatGPT 6 Pro (Chat)",
+      "url": "https://frontiertimelines.substack.com/p/week-22-ai-timeline-estimates-for",
+      "tableUrl": "https://datawrapper.dwcdn.net/60l3e/1/dataset.csv",
+      "imageUrl": null,
+      "notes": [
+        "AI R&D automation: 2026 (2026–2027) → Achieved."
+      ],
+      "estimates": {
+        "agi": {
+          "central": 2026,
+          "low": 2026,
+          "high": 2028,
+          "raw": "2026 (2026–2028)"
+        },
+        "weak": {
+          "status": "Achieved",
+          "raw": "Achieved"
+        },
+        "research": {
+          "status": "Achieved",
+          "raw": "Achieved"
         },
         "rsi": {
           "central": 2027,

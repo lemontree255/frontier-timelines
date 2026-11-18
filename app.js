@@ -1,4 +1,4 @@
-import { firstEstimate, plottedValue, shiftText } from './model.mjs';
+import { firstEstimate, plottedValue, shiftText, estimateValue } from './model.mjs';
 
 const $ = id => document.getElementById(id);
 const colours = ['#176f64','#b17624','#5572ad','#b45443','#8867a0','#2c8795','#b36a86','#63843b','#8c715a','#5961a2','#9a7835','#548b79','#606d79','#7d7d72'];
@@ -10,6 +10,9 @@ async function start() {
   if (!response.ok) throw new Error(`Forecast archive returned HTTP ${response.status}`);
   const data = await response.json();
   const { reports, categories } = data;
+  const firstYear = reports[0].date.slice(0, 4);
+  const lastYear = reports.at(-1).date.slice(0, 4);
+  const archiveYears = firstYear === lastYear ? firstYear : `${firstYear}–${lastYear}`;
   const numeric = categories.filter(category => category.id !== 'weak');
   const defaults = numeric.filter(category => category.id !== 'legacy-rsi').map(category => category.id);
   const first = new Map(numeric.map(category => [category.id, firstEstimate(reports, category.id)]));
@@ -33,8 +36,9 @@ async function start() {
   }));
 
   $('report-count').textContent = reports.length;
-  $('coverage').textContent = `${formatDate(reports[0].date)} — ${formatDate(reports.at(-1).date)} 2026`;
-  $('retrieved').textContent = `${formatDate(data.retrieved)} 2026`;
+  $('coverage').textContent = `${formatDate(reports[0].date)} ${firstYear} — ${formatDate(reports.at(-1).date)} ${lastYear}`;
+  $('archive-years').textContent = archiveYears;
+  $('retrieved').textContent = `${formatDate(data.retrieved)} ${data.retrieved.slice(0, 4)}`;
   $('date-slider').max = reports.length - 1;
   $('first-date').textContent = formatDate(reports[0].date);
   $('last-date').textContent = formatDate(reports.at(-1).date);
@@ -71,7 +75,7 @@ async function start() {
     updateSnapshot();
     draw();
     saveLocation();
-    $('selection-status').textContent = `Selected ${formatDate(reports[state.index].date)} 2026`;
+    $('selection-status').textContent = `Selected ${formatDate(reports[state.index].date)} ${reports[state.index].date.slice(0, 4)}`;
   }
 
   function focusTimeline(id) {
@@ -99,20 +103,21 @@ async function start() {
     const report = reports[index];
     const point = report.estimates[state.focus];
     const initial = first.get(state.focus);
-    $('focus-value').textContent = point?.central ?? '—';
-    $('focus-range').textContent = point ? `${point.low}–${point.high} · ${formatDate(report.date)}` : `Not tracked on ${formatDate(report.date)}`;
-    $('focus-change').textContent = point ? `${shiftText(point.central - initial.estimates[state.focus].central)} since first recorded` : `First recorded ${formatDate(initial.date)}`;
+    $('focus-value').textContent = point ? estimateValue(point) : '—';
+    $('focus-value').classList.toggle('qualitative', Boolean(point?.status));
+    $('focus-range').textContent = point?.central != null ? `${point.low}–${point.high} · ${formatDate(report.date)}` : point?.status ? `Source classification · ${formatDate(report.date)}` : `Not tracked on ${formatDate(report.date)}`;
+    $('focus-change').textContent = point?.central != null ? `${shiftText(point.central - initial.estimates[state.focus].central)} since first recorded` : point?.status ? 'No calendar-year estimate' : `First recorded ${formatDate(initial.date)}`;
     $('focus-definition').textContent = category.definition;
-    $('focus-first').textContent = `First: ${initial.estimates[state.focus].central} · ${formatDate(initial.date)} 2026`;
+    $('focus-first').textContent = `First: ${initial.estimates[state.focus].central} · ${formatDate(initial.date)} ${initial.date.slice(0, 4)}`;
     $('focus-source').href = report.url;
     $('focus-source').textContent = `${formatDate(report.date)} update ↗`;
   }
 
   function updateSnapshot() {
     const report = reports[state.index];
-    $('selected-date').textContent = `${formatDate(report.date)} 2026`;
+    $('selected-date').textContent = `${formatDate(report.date)} ${report.date.slice(0, 4)}`;
     $('date-slider').value = state.index;
-    $('date-slider').setAttribute('aria-valuetext', `${formatDate(report.date)} 2026`);
+    $('date-slider').setAttribute('aria-valuetext', `${formatDate(report.date)} ${report.date.slice(0, 4)}`);
     $('previous').disabled = state.index === 0;
     $('next').disabled = state.index === reports.length - 1;
     $('model').textContent = report.model;
@@ -139,11 +144,11 @@ async function start() {
       button.addEventListener('click', () => focusTimeline(category.id));
       name.append(button);
       row.append(name);
-      const change = point ? point.central - initial.estimates[category.id].central : null;
+      const change = point?.central != null ? point.central - initial.estimates[category.id].central : null;
       const cells = [
         `${initial.estimates[category.id].central} · ${formatDate(initial.date)}`,
-        point?.central ?? 'Not tracked',
-        point ? `${point.low}–${point.high}` : '—',
+        estimateValue(point),
+        point?.central != null ? `${point.low}–${point.high}` : '—',
         change == null ? '—' : shiftText(change),
       ];
       cells.forEach((text, index) => {
@@ -188,12 +193,13 @@ async function start() {
     const yTicks = y.ticks(6).filter(Number.isInteger);
     svg.append('g').attr('class', 'grid').attr('transform', `translate(${bounds.left},0)`).call(d3.axisLeft(y).tickValues(yTicks).tickSize(-(bounds.right - bounds.left)).tickFormat(''));
     svg.append('g').attr('class', 'axis').attr('transform', `translate(${bounds.left},0)`).call(d3.axisLeft(y).tickValues(yTicks).tickSize(0).tickPadding(12).tickFormat(value => state.mode === 'change' ? `${value > 0 ? '+' : ''}${value}` : String(value)));
-    const tickDates = chartWidth < 420 ? [reports[0].date, reports[7].date, reports[14].date, reports.at(-1).date] : [reports[0].date, ...reports.filter(report => ['2026-07-14','2026-08-04','2026-08-25','2026-09-15','2026-10-13','2026-11-10'].includes(report.date)).map(report => report.date)];
+    const tickCount = chartWidth < 420 ? 4 : 7;
+    const tickDates = d3.range(tickCount).map(index => reports[Math.round(index * (reports.length - 1) / (tickCount - 1))].date);
     const axis = svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${bounds.bottom})`).call(d3.axisBottom(x).tickValues(tickDates.map(utcDate)).tickSize(0).tickPadding(12).tickFormat(d3.utcFormat('%-d %b')));
     axis.select('.tick:first-of-type text').attr('text-anchor', 'start');
     axis.select('.tick:last-of-type text').attr('text-anchor', 'end');
     svg.append('text').attr('class', 'axis-label').attr('x', bounds.left).attr('y', 12).text(state.mode === 'year' ? 'Predicted arrival year' : 'Years moved from first estimate');
-    svg.append('text').attr('class', 'axis-label').attr('x', (bounds.left + bounds.right) / 2).attr('y', height - 8).attr('text-anchor', 'middle').text('Date of forecast · 2026');
+    svg.append('text').attr('class', 'axis-label').attr('x', (bounds.left + bounds.right) / 2).attr('y', height - 8).attr('text-anchor', 'middle').text(`Date of forecast · ${archiveYears}`);
     svg.append('defs').append('clipPath').attr('id', 'plot-clip').append('rect').attr('x', bounds.left).attr('y', bounds.top).attr('width', bounds.right - bounds.left).attr('height', bounds.bottom - bounds.top);
     const plot = svg.append('g').attr('clip-path', 'url(#plot-clip)');
     if (state.mode === 'change') plot.append('line').attr('class', 'zero-line').attr('x1', bounds.left).attr('x2', bounds.right).attr('y1', y(0)).attr('y2', y(0));
@@ -219,7 +225,7 @@ async function start() {
         guide.style('display', null).attr('x1', dateX).attr('x2', dateX);
         markers.selectAll('circle').data(visible.filter(item => item.points[index].estimate?.central != null)).join('circle').attr('cx', dateX).attr('cy', item => y(plottedValue(item.points[index].estimate, state.mode, item.baseline))).attr('r', 4).attr('fill', item => colour.get(item.id)).attr('stroke', 'var(--surface)').attr('stroke-width', 1.5);
         const point = reports[index].estimates[state.focus];
-        $('tooltip').textContent = `${formatDate(reports[index].date)}${point ? ` · ${categories.find(category => category.id === state.focus).label}: ${point.central}` : ''}`;
+        $('tooltip').textContent = `${formatDate(reports[index].date)}${point ? ` · ${categories.find(category => category.id === state.focus).label}: ${estimateValue(point)}` : ''}`;
         $('tooltip').hidden = false;
         const tooltipWidth = $('tooltip').offsetWidth;
         $('tooltip').style.left = `${Math.max(0, Math.min(chartWidth - tooltipWidth, dateX - tooltipWidth / 2))}px`;

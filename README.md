@@ -6,7 +6,7 @@ A small interactive view of how [Frontier Timelines](https://frontiertimelines.s
 
 [Desktop screenshot](docs/screenshots/desktop.png) · [Mobile screenshot](docs/screenshots/mobile.png)
 
-21 dated forecast sessions, 20 June–10 November 2026. The archive contains 227 observations, including qualitative weak-RSI status. Retrieved 11 November 2026.
+Source-linked weekly forecast sessions starting on 20 June 2026. The graph reads its coverage, update count and retrieval date directly from the dataset.
 
 - Compare arrival years or movement since each category's first recorded forecast.
 - Focus a timeline and display its published plausible range.
@@ -26,6 +26,7 @@ Open http://localhost:8000. Use an HTTP server rather than opening the page as a
 
 ```sh
 node --test model.test.mjs
+python3 -m unittest discover -s tests
 ```
 
 GitHub Pages serves the repository root from `main`.
@@ -42,14 +43,30 @@ Use each post's **current** estimate rather than retrospective baseline columns.
 - The 14 July retrospective GPT-5.5 comparison differs from the 7 July current table. Preserve the original 7 July values, including AGI 2028 (2027–2033) and ASI 2032 (2028–2042).
 - The original FDVR series continues as Neural FDVR, as explicitly stated on 29 September. Hybrid FDVR begins on that date as a distinct category.
 - Do not backfill categories that were introduced later. UBI starts on 14 July, general and asteroid-enabled post-scarcity on 18 August, fusion on 1 September, and superconductors on 27 October.
-- Qualitative weak-RSI “Now” and “Achieved” entries have no fabricated calendar year and are not drawn as numeric forecasts.
+- Qualitative “Now” and “Achieved” entries have no fabricated calendar year and are not drawn as numeric forecasts. On 17 November, strong AI R&D automation becomes “Achieved” in the source: its numeric line stops, while the inspector, table and CSV retain the status. This is the publication's classification, not our independent verification.
 - “Years moved” compares with each category's own first directly recorded central estimate. This can differ from the publication's retrospective “change vs. first week” column.
 - Step lines show a new forecast taking effect on a recorded session date. Undefined observations break the line. They do not assert a forecast between unobserved sessions.
 - Ranges are the publication's qualitative plausible ranges, **not statistical confidence intervals**. There is no inferred probability distribution.
 
 These are one publication's AI-generated scenario estimates, not independent expert consensus, factual achievement dates or a fact-check of the underlying news. Definitions and model choices evolve. Publication attribution remains with Frontier Timelines. This project is independent and unaffiliated.
 
-Updates are manual: append a source-linked report to the JSON dataset, preserve the original current-estimate values and category introductions, and run the checks. No scraping service, account, analytics or scheduled job is required.
+## Automatic refresh
+
+[Refresh forecasts](https://github.com/lemontree255/frontier-timelines/actions/workflows/refresh.yml) checks daily at **07:15 Europe/Copenhagen**, including daylight-saving changes. GitHub may delay scheduled runs. You can also choose **Run workflow** there for an immediate refresh and validation.
+
+The scheduled no-change path makes just two public HTTP requests: the committed dataset and the latest Substack archive page. If there is no unseen forecast it stops **before checkout**, parsing, tests or publishing. There are no artifacts, caches, AI/API subscriptions or custom secrets. The workflow uses a standard `ubuntu-latest` runner, which is [free for public repositories](https://docs.github.com/en/billing/concepts/product-billing/github-actions); the job is disabled if the repository becomes private. The job has a five-minute limit.
+
+When new posts appear, `scripts/refresh.py` follows the archive back to a known report, fetches each new post's first public Datawrapper table, and locates the **current** estimate column by its heading (the column order changes on 17 November). It validates dates, known categories, statuses, bounds and completeness before atomically appending anything. Existing history is never rewritten. Unknown categories, image-only updates and unexpected formats fail the run for manual review rather than publishing guesses.
+
+Checks run before a bot commit. Only the data file is staged. The workflow explicitly requests a GitHub Pages build because commits made using `GITHUB_TOKEN` do not trigger that build themselves. A no-change scheduled run makes no commit and no deployment. Manual runs republish the current site even without new data, so they can retry a failed build.
+
+To refresh locally:
+
+```sh
+python3 scripts/refresh.py
+```
+
+Changes to previously published posts require manual review; this importer only appends new reports. GitHub can disable public scheduled workflows after 60 days without repository activity; re-enable it in Actions if the publication stops updating for that long. Follow failure notifications in GitHub; no additional notification service is installed.
 
 ## Dependencies and licence
 

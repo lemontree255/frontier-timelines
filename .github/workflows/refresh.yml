@@ -1,0 +1,86 @@
+name: Refresh forecasts
+
+on:
+  schedule:
+    - cron: '15 7 * * *'
+      timezone: Europe/Copenhagen
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh.yml'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'data/forecasts.json'
+      - 'app.js'
+      - 'model.mjs'
+      - 'model.test.mjs'
+      - 'index.html'
+      - 'style.css'
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: refresh-forecasts
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.repository == 'lemontree255/frontier-timelines' && github.ref == 'refs/heads/main' && github.event.repository.visibility == 'public'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Lightweight new-forecast check
+        id: probe
+        run: |
+          python3 - <<'PY'
+          import json, os, re
+          from urllib.request import urlopen
+          from pathlib import Path
+          needed = True
+          if os.environ['GITHUB_EVENT_NAME'] == 'schedule':
+              repo = os.environ['GITHUB_REPOSITORY']
+              with urlopen(f'https://raw.githubusercontent.com/{repo}/main/data/forecasts.json', timeout=20) as response:
+                  known = {report['url'] for report in json.load(response)['reports']}
+              with urlopen('https://frontiertimelines.substack.com/api/v1/archive', timeout=20) as response:
+                  posts = json.load(response)['posts']
+              if not posts:
+                  raise ValueError('Empty archive response')
+              needed = any(post['canonical_url'] not in known and re.search(r'\btimeline\s+estimates?\b', post['title'], re.I) for post in posts)
+          with Path(os.environ['GITHUB_OUTPUT']).open('a') as output:
+              output.write(f'needed={str(bool(needed)).lower()}\n')
+          print('New forecast or requested validation.' if needed else 'No new forecast; skipping checkout, tests and publishing.')
+          PY
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        if: steps.probe.outputs.needed == 'true'
+        with:
+          ref: main
+      - name: Refresh source tables
+        if: steps.probe.outputs.needed == 'true'
+        run: python3 scripts/refresh.py
+      - name: Validate data and parser
+        if: steps.probe.outputs.needed == 'true'
+        run: |
+          python3 -m unittest discover -s tests
+          node --test model.test.mjs
+          git diff --check
+      - name: Commit new observations
+        if: steps.probe.outputs.needed == 'true'
+        id: commit
+        run: |
+          if ! git diff --quiet -- data/forecasts.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add data/forecasts.json
+            git commit -m 'Refresh Frontier Timelines observations'
+            git push origin HEAD:main
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+      # GITHUB_TOKEN commits do not trigger another workflow or a Pages build.
+      - name: Publish graph
+        if: steps.probe.outputs.needed == 'true' && (steps.commit.outputs.changed == 'true' || github.event_name != 'schedule')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
