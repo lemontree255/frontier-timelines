@@ -6,9 +6,11 @@ import json
 import re
 import subprocess
 from datetime import date, datetime
+from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlencode, urlsplit
+from urllib.parse import urlsplit
+from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data/forecasts.json'
@@ -143,35 +145,28 @@ def parse_report(post, markup, raw, table_url, previous, labels):
 def refresh(data, download=fetch):
     known = {report['url'] for report in data['reports']}
     posts = []
-    cursor = None
-    seen_cursors = set()
-    while True:
-        url = SOURCE + '/api/v1/archive'
-        if cursor:
-            url += '?' + urlencode({'cursor': cursor})
-        page = json.loads(download(url))
-        if not isinstance(page.get('posts'), list) or not page['posts']:
-            raise ValueError('Missing or empty archive page')
-        reached_known = False
-        for post in page['posts']:
-            if post['canonical_url'] in known:
-                reached_known = True
-                break
-            if re.search(r'\btimeline\s+estimates?\b', post['title'], re.I):
-                posts.append(post)
-        if reached_known:
+    items = ElementTree.fromstring(download(SOURCE + '/feed')).findall('./channel/item')
+    if not items:
+        raise ValueError('Missing or empty RSS feed')
+    for item in items:
+        url = item.findtext('link')
+        if url in known:
             break
-        cursor = page.get('nextCursor')
-        if not cursor or cursor in seen_cursors:
-            raise ValueError('Archive ended before the existing history; review required')
-        seen_cursors.add(cursor)
+        title = item.findtext('title', '')
+        if re.search(r'\btimeline\s+estimates?\b', title, re.I):
+            posts.append(dict(canonical_url=url, title=title,
+                              post_date=parsedate_to_datetime(item.findtext('pubDate')).isoformat(),
+                              subtitle=item.findtext('description', ''),
+                              markup=item.findtext('{http://purl.org/rss/1.0/modules/content/}encoded', '')))
+    else:
+        raise ValueError('RSS feed no longer overlaps the existing history; review required')
     # Work on a copy so a malformed later post cannot partially update the archive.
     result = {**data, 'reports': list(data['reports'])}
     labels = {category['id']: category['label'] for category in data['categories']}
     for post in reversed(posts):
         if not re.fullmatch(SOURCE + r'/p/[a-z0-9-]+', post['canonical_url']):
             raise ValueError('Unexpected post URL')
-        markup = download(post['canonical_url'])
+        markup = post['markup']
         page = PostHTML()
         page.feed(markup)
         if not page.tables:

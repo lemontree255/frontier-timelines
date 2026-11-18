@@ -1,6 +1,9 @@
 import copy
 import json
 from pathlib import Path
+from email.utils import format_datetime
+from datetime import datetime
+from xml.etree import ElementTree
 import sys
 import unittest
 
@@ -34,11 +37,20 @@ class RefreshTests(unittest.TestCase):
                 parse_table(invalid, BASE['reports'][-1]['estimates'])
 
     def test_append_preserves_history_and_second_run_is_a_noop(self):
-        post = {'canonical_url': POST['url'], 'post_date': POST['published'],
-                'title': POST['title'], 'subtitle': 'Model Used: ' + POST['model']}
+        feed = ElementTree.Element('rss')
+        channel = ElementTree.SubElement(feed, 'channel')
+        item = ElementTree.SubElement(channel, 'item')
+        for tag, text in {
+            'link':POST['url'], 'title':POST['title'],
+            'pubDate':format_datetime(datetime.fromisoformat(POST['published'])),
+            'description':'Model Used: ' + POST['model'],
+            '{http://purl.org/rss/1.0/modules/content/}encoded':'<p>Current date: November 17, 2026</p><iframe src="https://datawrapper.dwcdn.net/60l3e/1/"></iframe>',
+        }.items():
+            ElementTree.SubElement(item, tag).text = text
+        item = ElementTree.SubElement(channel, 'item')
+        ElementTree.SubElement(item, 'link').text = BASE['reports'][-1]['url']
         urls = {
-            SOURCE + '/api/v1/archive': json.dumps({'posts': [post, {'canonical_url': BASE['reports'][-1]['url']}]}),
-            POST['url']: '<script>Current date: Wrong</script><p>Current date: November 17, 2026</p><iframe src="https://datawrapper.dwcdn.net/60l3e/1/"></iframe>',
+            SOURCE + '/feed': ElementTree.tostring(feed, encoding='unicode'),
             POST['tableUrl']: TABLE,
         }
         original = copy.deepcopy(BASE)
