@@ -9,6 +9,8 @@
 - Executed the workflow's actual lightweight probe with unchanged and new-forecast responses: exactly two HTTP requests in each case, with the correct skip/update decision. Unchanged scheduled runs skip checkout, table parsing, tests, commits and Pages publication.
 - Headless Chromium: latest session, achieved inspector/table state, previous numeric history, both axes, range checkbox, CSV export, no page errors, and no document overflow at 390px or 320px. Updated desktop/mobile screenshots were visually inspected.
 - Workflow runs only for this public repository, on a standard `ubuntu-latest` runner, with a five-minute limit and no artifact/cache upload steps. No AI services or custom credentials are used.
+- Live GitHub execution found Cloudflare HTTP 403 blocks from both standard Ubuntu and macOS runners. No failed run modified the dataset. The scheduled workflow is disabled pending a runner with verified source access; unattended automation is not claimed working.
+- The deployed graph was checked in headless Chromium: 22 sessions, the 17 November update and its “Achieved” status display correctly, with previous numeric history preserved.
 
 ## Initial release — 11 November 2026
 

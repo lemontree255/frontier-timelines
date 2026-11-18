@@ -17,7 +17,7 @@ concurrency:
 jobs:
   refresh:
     if: github.repository == 'lemontree255/frontier-timelines' && github.ref == 'refs/heads/main' && github.event.repository.visibility == 'public'
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - name: Lightweight new-forecast check
